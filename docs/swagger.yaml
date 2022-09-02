@@ -1,0 +1,65 @@
+basePath: /
+definitions:
+  model.Bar:
+    properties:
+      Bar:
+        type: string
+      Bar_Bar:
+        type: string
+    type: object
+  model.Foo:
+    properties:
+      foo:
+        type: string
+      foo_foo:
+        type: string
+    type: object
+host: localhost:8080
+info:
+  contact: {}
+  description: This is a sample server.
+  termsOfService: http://swagger.io/terms/
+  title: GO REST API
+  version: "2.0"
+paths:
+  /api/v1/bar:
+    post:
+      consumes:
+      - '*/*'
+      description: BarController will update your bar request.
+      parameters:
+      - description: query params
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/model.Bar'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            additionalProperties: true
+            type: object
+      summary: BarController controller.
+      tags:
+      - BarController
+  /api/v1/foo:
+    get:
+      consumes:
+      - '*/*'
+      description: FooController will return a new foo object.
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.Foo'
+      summary: FooController controller.
+      tags:
+      - FooController
+schemes:
+- http
+swagger: "2.0"

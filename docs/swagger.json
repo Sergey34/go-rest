@@ -1,0 +1,99 @@
+{
+    "schemes": [
+        "http"
+    ],
+    "swagger": "2.0",
+    "info": {
+        "description": "This is a sample server.",
+        "title": "GO REST API",
+        "termsOfService": "http://swagger.io/terms/",
+        "contact": {},
+        "version": "2.0"
+    },
+    "host": "localhost:8080",
+    "basePath": "/",
+    "paths": {
+        "/api/v1/bar": {
+            "post": {
+                "description": "BarController will update your bar request.",
+                "consumes": [
+                    "*/*"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "BarController"
+                ],
+                "summary": "BarController controller.",
+                "parameters": [
+                    {
+                        "description": "query params",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/model.Bar"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": true
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/foo": {
+            "get": {
+                "description": "FooController will return a new foo object.",
+                "consumes": [
+                    "*/*"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "FooController"
+                ],
+                "summary": "FooController controller.",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/model.Foo"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "model.Bar": {
+            "type": "object",
+            "properties": {
+                "Bar": {
+                    "type": "string"
+                },
+                "Bar_Bar": {
+                    "type": "string"
+                }
+            }
+        },
+        "model.Foo": {
+            "type": "object",
+            "properties": {
+                "foo": {
+                    "type": "string"
+                },
+                "foo_foo": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}
